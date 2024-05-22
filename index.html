@@ -2,17 +2,18 @@
 <html>
 
 <head>
-    <title>Ankur's Profile</title>
+    <title>My Resume</title>
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+
     <script  src="https://kit.fontawesome.com/b3348ae33f.js" crossorigin="anonymous"></script>
-    <link rel="icon" href="icon.png" type="image/icon type">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
 </head>
 
 <body>
 
     <header id="body-header">
         <nav>
-
             <ul class="horizontal-list text-center nav-menu">
                 <li>
                     <a href="#"> Home </a>
@@ -286,7 +287,7 @@
 
     </main>
     
-
+    <!-- emailjs script  -->
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
         (function(){
@@ -314,5 +315,26 @@
                 });
         });
     </script>
+    <!-- responsive script  -->
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            document.querySelector('.dropdown-btn').addEventListener('click', function() {
+                document.querySelector('.dropdown-content').classList.toggle('show');
+            });
+
+            window.onclick = function(event) {
+                if (!event.target.matches('.dropdown-btn')) {
+                    var dropdowns = document.getElementsByClassName('dropdown-content');
+                    for (var i = 0; i < dropdowns.length; i++) {
+                        var openDropdown = dropdowns[i];
+                        if (openDropdown.classList.contains('show')) {
+                            openDropdown.classList.remove('show');
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+
 </body>
 </html>
